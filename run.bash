@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 #
-# Put code here to build and setup the repo
-#
-
-#!/usr/bin/env bash
-#
-# Bash script for working with routes on server
+# Bash script for setting up the repo in a container
 #
 # Exit values:
 #  0 on success
