@@ -2,7 +2,6 @@ version: "3.8"
 
 services:
   simple-map:
-    image: "simple-map"
     container_name: "simple-map"
     build: "./"
     working_dir: "/usr/share/nginx/html/"

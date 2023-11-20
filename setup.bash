@@ -83,11 +83,7 @@ function app-up
 function app-down
 {
     # Close the container
-    docker-compose down -v
-
-    # Remove the image
-    docker rmi simple-map
-
+    docker-compose down -v --rmi local
 }
 
 #

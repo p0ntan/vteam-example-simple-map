@@ -10,8 +10,8 @@ I detta repo används också docker-compose för att enklare sätta upp repot.
 
 ```
 # För att starta containern
-./run.bash up
+./setup.bash up
 
 # FÖr att stänga containern, och ta bort imagen som byggs
-./run.bash down
+./setup.bash down
 ```
