@@ -43,7 +43,6 @@ function renderMainView() {
     btn.innerText = "Starta simulering";
     btn.onclick = () => {
         const result = fetch("http://localhost:1337/bikes/simulate");
-        console.log(result);
     }
     container.appendChild(btn)
 }
