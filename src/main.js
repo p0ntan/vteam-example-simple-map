@@ -1,5 +1,5 @@
 function renderMainView() {
-    const evtSource = new EventSource("http://localhost:1337/bikes/feed", {
+    const evtSource = new EventSource("http://localhost:1337/v1/bikes/feed", {
         withCredentials: true,
     });
 
@@ -42,7 +42,7 @@ function renderMainView() {
     btn.className = 'start-button';
     btn.innerText = "Starta simulering";
     btn.onclick = () => {
-        const result = fetch("http://localhost:1337/bikes/simulate");
+        const result = fetch("http://localhost:1337/v1/bikes/simulate");
     }
     container.appendChild(btn)
 }
