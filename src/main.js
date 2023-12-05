@@ -1,12 +1,14 @@
-function moveMarker(marker, newLatLng, duration = 5000) {
+function moveMarker(marker, newLatLng, duration = 10000) {
     const from = marker.getLatLng();
     const to = new L.LatLng(newLatLng[0], newLatLng[1]);
     const start = performance.now();
+    const steps = 10; // Antal steg
 
     function animate(time) {
         const elapsed = time - start;
-        const t = elapsed / duration;
-        if (t < 1) {
+        if (elapsed < duration) {
+            const stepIndex = Math.floor((elapsed / duration) * steps); // Beräknar nuvarande steg
+            const t = stepIndex / steps; // Normaliserad tid för det aktuella steget
             const lat = from.lat + (to.lat - from.lat) * t;
             const lng = from.lng + (to.lng - from.lng) * t;
             marker.setLatLng([lat, lng]);
