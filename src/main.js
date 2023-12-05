@@ -45,13 +45,17 @@ function renderMainView() {
 
     evtSource.onmessage = function(event) {
         const data = JSON.parse(event.data);
+        const reversedMarkers = [
+            data.geoJSON.geometry.coordinates[1],
+            data.geoJSON.geometry.coordinates[0]
+        ]
         let marker;
 
         if (data.id in markers) {
             marker = markers[data.id];
-            moveMarker(marker, data.geoJSON.geometry.coordinates);
+            moveMarker(marker, reversedMarkers);
         } else {
-            marker = L.marker(data.geoJSON.geometry.coordinates);
+            marker = L.marker(reversedMarkers);
             markers[data.id] = marker;
             marker.addTo(map);
         }
